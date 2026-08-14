@@ -4,10 +4,18 @@
  */
 package com.mycompany.estatesales;
 
+import java.util.Scanner;
+
 /**
  *
  * @author emeris
  */
 public class DemoCandles {
+    
+     Scanner input = new Scanner(System.in);
+
+        // Create objects
+        Candle candle = new Candle();
+        ScentedCandle scentedCandle = new ScentedCandle();
     
 }
