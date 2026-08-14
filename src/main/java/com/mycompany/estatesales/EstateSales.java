@@ -49,6 +49,21 @@ public class EstateSales {
             System.out.println();
         }
         
+        // Print totals
+        System.out.printf("\nTotal property sales for %s = R %,.0f%n",
+                agents[0], totals[0]);
+
+        System.out.printf("Total property sales for %s = R %,.0f%n",
+                agents[1], totals[1]);
+
+        // Print commissions
+        System.out.printf("%nSales Commission for %s = R %,.0f%n",
+                agents[0], commissions[0]);
+
+        System.out.printf("Sales Commission for %s = R %,.0f%n",
+                agents[1], commissions[1]);
+
+        
         
         
 
