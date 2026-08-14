@@ -24,6 +24,17 @@ public class EstateSales {
         double[] commissions = new double[2];
 
         System.out.println("ESTATE AGENTS SALES REPORT\n");
+        
+        
+        // Print headings
+        System.out.printf("%-15s", "");
+        for (String month : months) {
+            System.out.printf("%15s", month);
+        }
+        System.out.println();
+
+        System.out.println("----------------------------------------------");
+
 
     }
 }
