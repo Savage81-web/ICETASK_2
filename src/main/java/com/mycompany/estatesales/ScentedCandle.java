@@ -21,4 +21,19 @@ public class ScentedCandle extends Candle {
     public void setScent(String scent) {
         this.scent = scent;
     }
+    
+    // Override setHeight
+    // Scented candles cost R3.00 per inch
+    @Override
+    public void setHeight(double height) {
+        
+        super.setHeight(height);
+
+        // The parent calculates R2.00 per inch.
+        // We need R3.00 per inch, so calculate using height.
+        // Price has no setter, therefore this method needs
+        // another approach.
+        
+    }
+        
 }
