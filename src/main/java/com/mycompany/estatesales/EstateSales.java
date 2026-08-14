@@ -62,6 +62,18 @@ public class EstateSales {
 
         System.out.printf("Sales Commission for %s = R %,.0f%n",
                 agents[1], commissions[1]);
+        
+        // Determine top-selling agent
+        int topAgent;
+
+        if (totals[0] > totals[1]) {
+            topAgent = 0;
+        } else {
+            topAgent = 1;
+        }
+
+        System.out.println("\nTop performing estate agent: "
+                + agents[topAgent]);
 
         
         
