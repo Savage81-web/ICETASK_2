@@ -83,6 +83,23 @@ public class DemoCandles {
         }
 
         scentedCandle.setScent(scent);
+        
+        
+        // ---------------- DISPLAY DETAILS ----------------
+        System.out.println("\n***************CANDLE DETAILS***************");
+
+        System.out.println("\n***************Regular Candle***************");
+        System.out.println("Colour: " + candle.getColour());
+        System.out.println("Height: " + candle.getHeight() + " inches");
+        System.out.printf("Price: R%.2f%n", candle.getPrice());
+
+        System.out.println("\n***************Scented Candle***************");
+        System.out.println("Colour: " + scentedCandle.getColour());
+        System.out.println("Height: " + scentedCandle.getHeight() + " inches");
+        System.out.println("Scent: " + scentedCandle.getScent());
+        System.out.printf("Price: R%.2f%n", scentedCandle.getPrice());
+
+        input.close();
 
 
 
