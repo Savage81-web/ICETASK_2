@@ -24,4 +24,23 @@ public class Candle {
         this.colour = colour;
     }
     
+    // Getter for height
+    public double getHeight() {
+        return height;
+    }
+
+    // Setter for height
+    // Price is automatically calculated at R2.00 per inch
+    public void setHeight(double height) {
+        this.height = height;
+        this.price = height * 2.00;
+    }
+
+    // Getter for price
+    public double getPrice() {
+        return price;
+        
+    }
+        
+    
 }
