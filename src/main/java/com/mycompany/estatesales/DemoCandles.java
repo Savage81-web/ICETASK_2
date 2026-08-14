@@ -60,6 +60,30 @@ public class DemoCandles {
         int scentChoice = input.nextInt();
 
         String scent;
+        
+        switch (scentChoice) {
+            case 1:
+                scent = "Gardenia";
+                break;
+
+            case 2:
+                scent = "Vanilla";
+                break;
+
+            case 3:
+                scent = "Lavender";
+                break;
+
+            case 4:
+                scent = "Cinnamon";
+                break;
+
+            default:
+                scent = "Unknown";
+        }
+
+        scentedCandle.setScent(scent);
+
 
 
         
