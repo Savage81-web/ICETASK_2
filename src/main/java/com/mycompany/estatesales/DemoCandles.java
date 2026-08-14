@@ -47,6 +47,19 @@ public class DemoCandles {
         System.out.print("Enter candle height in inches: ");
         height = input.nextDouble();
         scentedCandle.setHeight(height);
+        
+        
+         // Scent options
+        System.out.println("\nAvailable scents:");
+        System.out.println("1. Gardenia");
+        System.out.println("2. Vanilla");
+        System.out.println("3. Lavender");
+        System.out.println("4. Cinnamon");
+
+        System.out.print("Enter the scent: ");
+        int scentChoice = input.nextInt();
+
+        String scent;
 
 
         
