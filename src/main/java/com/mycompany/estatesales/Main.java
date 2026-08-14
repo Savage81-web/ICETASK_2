@@ -12,26 +12,295 @@ import java.util.Scanner;
  */
 public class Main {
     
+
+
+
+    // =========================================================
+    // QUESTION 2 - CANDLE CLASS
+    // =========================================================
+    static class Candle {
+
+        private String colour;
+        private double height;
+        protected double price;
+
+        // Getter for colour
+        public String getColour() {
+            return colour;
+        }
+
+        // Setter for colour
+        public void setColour(String colour) {
+            this.colour = colour;
+        }
+
+        // Getter for height
+        public double getHeight() {
+            return height;
+        }
+
+        // Setter for height
+        // Regular candle = R2.00 per inch
+        public void setHeight(double height) {
+            this.height = height;
+            this.price = height * 2.00;
+        }
+
+        // Getter for price
+        public double getPrice() {
+            return price;
+        }
+    }
+
+    // =========================================================
+    // QUESTION 2 - SCENTED CANDLE CLASS
+    // =========================================================
+    static class ScentedCandle extends Candle {
+
+        private String scent;
+
+        // Getter for scent
+        public String getScent() {
+            return scent;
+        }
+
+        // Setter for scent
+        public void setScent(String scent) {
+            this.scent = scent;
+        }
+
+        // Override height
+        // Scented candle = R3.00 per inch
+        @Override
+        public void setHeight(double height) {
+            super.setHeight(height);
+            this.price = height * 3.00;
+        }
+    }
+
+    // =========================================================
+    // MAIN
+    // =========================================================
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        // =========================
-        // QUESTION 1 - ESTATE SALES
-        // =========================
+        // =====================================================
+        // QUESTION 1 - ESTATE AGENTS
+        // =====================================================
 
-        // your Estate Sales code here
+        double[][] sales = {
+            {800000, 1500000, 2000000},
+            {700000, 1200000, 1600000}
+        };
+
+        String[] agents = {"Joe Bloggs", "Jane Doe"};
+        String[] months = {"JAN", "FEB", "MAR"};
+
+        double[] totals = new double[2];
+        double[] commissions = new double[2];
+
+        System.out.println("==============================================");
+        System.out.println("       QUESTION 01 - ESTATE AGENTS");
+        System.out.println("==============================================");
+
+        System.out.println("\nESTATE AGENTS SALES REPORT\n");
+
+        System.out.printf("%-20s", "");
+
+        for (String month : months) {
+            System.out.printf("%18s", month);
+        }
+
+        System.out.println();
+
+        System.out.println("--------------------------------------------------------------");
+
+        // Display sales and calculate totals
+        for (int i = 0; i < sales.length; i++) {
+
+            System.out.printf("%-20s", agents[i]);
+
+            for (int j = 0; j < sales[i].length; j++) {
+
+                System.out.printf(
+                        "%18s",
+                        "R " + String.format("%.1f", sales[i][j])
+                );
+
+                totals[i] += sales[i][j];
+            }
+
+            commissions[i] = totals[i] * 0.02;
+
+            System.out.println();
+        }
+
+        // Display total sales
+        System.out.printf(
+                "\nTotal property sales for %s = R %,.0f%n",
+                agents[0],
+                totals[0]
+        );
+
+        System.out.printf(
+                "Total property sales for %s = R %,.0f%n",
+                agents[1],
+                totals[1]
+        );
+
+        // Display commission
+        System.out.printf(
+                "\nSales Commission for %s = R %,.0f%n",
+                agents[0],
+                commissions[0]
+        );
+
+        System.out.printf(
+                "Sales Commission for %s = R %,.0f%n",
+                agents[1],
+                commissions[1]
+        );
+
+        // Find top-selling agent
+        int topAgent;
+
+        if (totals[0] > totals[1]) {
+            topAgent = 0;
+        } else {
+            topAgent = 1;
+        }
+
+        System.out.println(
+                "\nTop performing estate agent: " + agents[topAgent]
+        );
 
 
-        // =========================
+        // =====================================================
         // QUESTION 2 - CANDLES
-        // =========================
+        // =====================================================
 
+        System.out.println("\n\n==============================================");
+        System.out.println("          QUESTION 02 - CANDLES");
+        System.out.println("==============================================");
+
+        // Create objects
         Candle candle = new Candle();
         ScentedCandle scentedCandle = new ScentedCandle();
 
-        // candle input/output here
+        // -----------------------------------------------------
+        // REGULAR CANDLE
+        // -----------------------------------------------------
 
+        System.out.println("\n***************REGULAR CANDLE***************");
+
+        System.out.print("Enter candle colour: ");
+        candle.setColour(input.nextLine());
+
+        System.out.print("Enter candle height in inches: ");
+        double regularHeight = input.nextDouble();
+
+        candle.setHeight(regularHeight);
+
+        input.nextLine(); // Clear Enter key
+
+
+        // -----------------------------------------------------
+        // SCENTED CANDLE
+        // -----------------------------------------------------
+
+        System.out.println("\n***************SCENTED CANDLE***************");
+
+        System.out.print("Enter candle colour: ");
+        scentedCandle.setColour(input.nextLine());
+
+        System.out.print("Enter candle height in inches: ");
+        double scentedHeight = input.nextDouble();
+
+        scentedCandle.setHeight(scentedHeight);
+
+
+        // -----------------------------------------------------
+        // SCENT OPTIONS
+        // -----------------------------------------------------
+
+        System.out.println("\nAvailable scents:");
+        System.out.println("1. Gardenia");
+        System.out.println("2. Vanilla");
+        System.out.println("3. Lavender");
+        System.out.println("4. Cinnamon");
+
+        System.out.print("Enter the scent: ");
+        int scentChoice = input.nextInt();
+
+        switch (scentChoice) {
+
+            case 1:
+                scentedCandle.setScent("Gardenia");
+                break;
+
+            case 2:
+                scentedCandle.setScent("Vanilla");
+                break;
+
+            case 3:
+                scentedCandle.setScent("Lavender");
+                break;
+
+            case 4:
+                scentedCandle.setScent("Cinnamon");
+                break;
+
+            default:
+                scentedCandle.setScent("Unknown");
+                break;
+        }
+
+
+        // -----------------------------------------------------
+        // DISPLAY CANDLE DETAILS
+        // -----------------------------------------------------
+
+        System.out.println("\n***************CANDLE DETAILS***************");
+
+        System.out.println("\n***************Regular Candle***************");
+
+        System.out.println("Colour: " + candle.getColour());
+
+        System.out.println(
+                "Height: " + candle.getHeight() + " inches"
+        );
+
+        System.out.printf(
+                "Price: R%.2f%n",
+                candle.getPrice()
+        );
+
+
+        System.out.println("\n***************Scented Candle***************");
+
+        System.out.println(
+                "Colour: " + scentedCandle.getColour()
+        );
+
+        System.out.println(
+                "Height: " + scentedCandle.getHeight() + " inches"
+        );
+
+        System.out.println(
+                "Scent: " + scentedCandle.getScent()
+        );
+
+        System.out.printf(
+                "Price: R%.2f%n",
+                scentedCandle.getPrice()
+        );
+
+
+        input.close();
     }
+}
+    
+    
     
 }
