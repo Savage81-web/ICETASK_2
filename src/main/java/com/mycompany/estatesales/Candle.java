@@ -10,6 +10,8 @@ package com.mycompany.estatesales;
  */
 public class Candle {
     
+    // Question 2 started here.
+    
     private String colour;
     private double height;
     private double price;
