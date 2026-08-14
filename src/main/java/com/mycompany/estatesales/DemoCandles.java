@@ -35,9 +35,24 @@ public class DemoCandles {
         candle.setHeight(height);
 
         input.nextLine(); // Clear newline
+        
+        
+        // ---------------- SCENTED CANDLE ----------------
+        System.out.println("\n***************SCENTED CANDLE***************");
+
+        System.out.print("Enter candle colour: ");
+        colour = input.nextLine();
+        scentedCandle.setColour(colour);
+
+        System.out.print("Enter candle height in inches: ");
+        height = input.nextDouble();
+        scentedCandle.setHeight(height);
+
 
         
     }
+    
+    
     
      
         
