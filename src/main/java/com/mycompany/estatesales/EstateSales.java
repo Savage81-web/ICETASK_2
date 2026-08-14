@@ -11,6 +11,6 @@ package com.mycompany.estatesales;
 public class EstateSales {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
     }
 }
