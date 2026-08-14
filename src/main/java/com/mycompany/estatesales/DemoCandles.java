@@ -12,10 +12,39 @@ import java.util.Scanner;
  */
 public class DemoCandles {
     
-     Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
 
         // Create objects
         Candle candle = new Candle();
         ScentedCandle scentedCandle = new ScentedCandle();
+        
+        
+        
+        
+       // ---------------- REGULAR CANDLE ----------------
+        System.out.println("***************REGULAR CANDLE***************");
+
+        System.out.print("Enter candle colour: ");
+        String colour = input.nextLine();
+        candle.setColour(colour);
+
+        System.out.print("Enter candle height in inches: ");
+        double height = input.nextDouble();
+        candle.setHeight(height);
+
+        input.nextLine(); // Clear newline
+
+        
+    }
+    
+     
+        
+        
+        
+        
+        
+        
     
 }
